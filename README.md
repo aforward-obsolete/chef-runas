@@ -1,6 +1,5 @@
 # Overview #
-Chef cookbook for the [monit](http://mmonit.com/monit/) monitoring and
-management tool.
+Chef cookbook for the creating a default deployer user.
 
 # How to add to your cookbook repository #
 
