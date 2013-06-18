@@ -12,7 +12,7 @@ For more info, check out the [Pro Git](http://progit.org/book/ch6-6.html) book.
 #### Add the monit repo ####
 
     $ cd YOUR_REPO_ROOT
-    $ git submodule add git://github.com/aforward/chef-runas.git cookbooks/runas
+    $ git submodule add git://github.com/aforward/chef-runas.git ./chef/cookbooks/runas
 
 
 History
