@@ -7,9 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "runas::noexec_issue"
-include_recipe "runas::create_user"
-include_recipe "runasuser::newpassword"
+include_recipe "runas::user"
 
 # Set new user in the sudoer list
 # node['authorization']['sudo']['users'] << node[:runas][:user]

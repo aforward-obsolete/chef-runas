@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+# ./ssh_no_prompt ubuntu.vm aforward hello "mkdir -p .ssh/"
+# ./scp_no_prompt ubuntu.vm aforward hello ~/.ssh/id_dsa.pub newkey.pub
+# ./ssh_no_prompt ubuntu.vm aforward hello "cat newkey.pub >> .ssh/authorized_keys"
+
+set timeout 20
+set ip [lindex $argv 0]
+set user [lindex $argv 1]
+set password [lindex $argv 2]
+set script [lindex $argv 3]
+
+spawn ssh "$user\@$ip" "$script"
+expect "assword:"
+send "$password\r";
+expect eof

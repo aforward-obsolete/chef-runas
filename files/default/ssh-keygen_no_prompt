@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+set default_save_dir [lindex $argv 0]
+set actual_save_dir [lindex $argv 1]
+spawn bash -c "ssh-keygen -t dsa"
+match_max 100000
+expect -exact "Generating public/private dsa key pair.\r
+Enter file in which to save the key ($default_save_dir):"
+send -- "$actual_save_dir\r"
+expect -exact "\r
+Enter passphrase (empty for no passphrase): "
+send -- "\r"
+expect -exact "\r
+Enter same passphrase again: "
+send -- "\r"
+expect eof
