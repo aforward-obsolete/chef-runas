@@ -15,3 +15,6 @@ default[:runas][:known_hosts] = []
 default[:runas][:remote_users] = []
 default[:runas][:remote_passwords] = []
 default[:runas][:remote_servers] = []
+
+
+default[:runas][:ruby_version] = "1.9.2-p290"
