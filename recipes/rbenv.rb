@@ -1,5 +1,6 @@
 
-["build-essential","git-core"].each do |p|
+
+["build-essential","git-core","zlib1g","zlib1g-dev"].each do |p|
   package p
 end
 
@@ -34,4 +35,8 @@ end
 
 execute "./install.sh" do
   cwd "/tmp/ruby-build"
+end
+
+gem_package "bundler" do
+  version "1.3.5"
 end
