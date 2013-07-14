@@ -1,6 +1,5 @@
 
-
-["build-essential","git-core","zlib1g","zlib1g-dev"].each do |p|
+%w(zlib1g-dev openssl libopenssl-ruby1.9.1 libssl-dev libruby1.9.1 libreadline-dev git-core).each do |p|
   package p
 end
 
@@ -39,4 +38,9 @@ end
 
 gem_package "bundler" do
   version "1.3.5"
+end
+        
+execute "Enabled rbenv as root user" do
+  command "echo \"export PATH=/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH\" | cat - /root/.bashrc > /tmp/tmp.bashrc && mv /tmp/tmp.bashrc /root/.bashrc"
+  only_if {`cat /root/.bashrc | grep "export PATH=/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH"`.strip == ""}
 end
