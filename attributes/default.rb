@@ -18,6 +18,6 @@ default[:runas][:remote_servers] = []
 
 
 default[:runas][:ruby_version] = "1.9.2-p290"
-default[:runas][:wkhtmltopdf_version] = "0.11.0_rc1"
-default[:runas][:wkhtmltopdf_print_version] = "0.11.0 rc1"
+default[:runas][:wkhtmltopdf_version] = "0.9.9"
+default[:runas][:wkhtmltopdf_print_version] = "0.9.9"
 default[:runas][:wkhtmltopdf_bin_path] = "/usr/local/bin"
