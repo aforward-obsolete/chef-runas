@@ -6,7 +6,8 @@ include_recipe("runas::rbenv")
   "rbenv global #{node[:runas][:ruby_version]}",
   "rbenv rehash"
 ].each do |cmd|
+  already_exists = File.exists?("/usr/local/rbenv/versions/#{node[:runas][:ruby_version]}")
   execute "#{cmd}" do
-    not_if { File.exists?("/usr/local/rbenv/versions/#{node[:runas][:ruby_version]}") }
+    not_if { already_exists }
   end
 end
