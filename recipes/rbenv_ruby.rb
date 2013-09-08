@@ -21,3 +21,8 @@ execute "global_ruby" do
   command "./global_ruby"
   only_if { wrong_version }
 end
+
+gem_package "bundler" do
+  version "1.3.5"
+  gem_binary "/usr/local/rbenv/versions/#{node[:runas][:ruby_version]}/bin/gem"
+end
