@@ -35,10 +35,6 @@ end
 execute "./install.sh" do
   cwd "/tmp/ruby-build"
 end
-
-gem_package "bundler" do
-  version "1.3.5"
-end
         
 execute "Enabled rbenv as root user" do
   command "echo \"export PATH=/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH\" | cat - /root/.bashrc > /tmp/tmp.bashrc && mv /tmp/tmp.bashrc /root/.bashrc"
