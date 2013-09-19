@@ -19,4 +19,4 @@ include_recipe "runas::user"
   end
 end
 
-execute "ldconfig /home/deployer/local/lib"
+execute "ldconfig /home/#{node[:runas][:user]}/local/lib"

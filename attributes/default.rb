@@ -1,8 +1,8 @@
 default[:runas][:user] = 'deployer'
 default[:runas][:password] = 'PLEASE_FILL_ME_IN'
 default[:runas][:group] = 'www-data'
-default[:runas][:dir_path] = "/home/#{default[:runas][:user]}"
-default[:runas][:install_path] = "/home/#{default[:runas][:user]}/local"
+default[:runas][:dir_path] = "/home/#{node[:runas][:user]}"
+default[:runas][:install_path] = "/home/#{node[:runas][:user]}/local"
 default[:runas][:noexec] = false
 
 default[:runas][:github_username] = nil 
