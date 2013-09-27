@@ -1,0 +1,41 @@
+# This is an upstart script to keep nginx running.
+# To install disable the old way of doing things:
+#
+#   /etc/init.d/nginx stop && update-rc.d -f nginx remove
+#
+# then put this script here:
+#
+#   /etc/init/nginx.conf
+#
+# and reload upstart configuration:
+#
+#   initctl reload-configuration
+#
+# You can manually start and stop nginx like this:
+# 
+# start nginx
+# stop nginx
+#
+ 
+description "nginx http daemon"
+author "George Shammas <georgyo@gmail.com>"
+ 
+start on (filesystem and net-device-up IFACE=lo)
+stop on runlevel [!2345]
+ 
+env DAEMON=<%= node[:runas][:nginx_binfile] %>
+env PID=<%= node[:runas][:nginx_pidfile] %>
+ 
+expect fork
+respawn
+respawn limit 10 5
+#oom never
+ 
+pre-start script
+        $DAEMON -t
+        if [ $? -ne 0 ]
+                then exit $?
+        fi
+end script
+ 
+exec $DAEMON

@@ -21,3 +21,6 @@ default[:runas][:ruby_version] = "1.9.2-p290"
 default[:runas][:wkhtmltopdf_version] = "0.9.9"
 default[:runas][:wkhtmltopdf_print_version] = "0.9.9"
 default[:runas][:wkhtmltopdf_bin_path] = "/usr/local/bin"
+
+default[:runas][:nginx_pidfile] = "/var/run/nginx.pid"
+default[:runas][:nginx_binfile] = "/usr/sbin/nginx"
