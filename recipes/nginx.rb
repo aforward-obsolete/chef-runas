@@ -6,6 +6,13 @@ template "/etc/init/nginx.conf" do
   owner "root"
   group "root"
   mode 0700
+  source 'nginx.init.erb'
+end
+
+template "/etc/nginx/nginx.conf" do
+  owner "root"
+  group "root"
+  mode 0700
   source 'nginx.conf.erb'
 end
 
