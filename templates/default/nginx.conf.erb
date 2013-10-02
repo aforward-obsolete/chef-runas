@@ -11,6 +11,7 @@ events {
 
 http {
     server_names_hash_bucket_size 64;
+    types_hash_max_size 2048;
     include       /etc/nginx/mime.types;
 
     access_log	/var/log/nginx/access.log;
