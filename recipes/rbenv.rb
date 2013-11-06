@@ -5,7 +5,9 @@ end
 
 git "/usr/local/rbenv" do
   repository "git://github.com/sstephenson/rbenv.git"
-  action :sync
+  user 'root'
+  group 'root'
+  depth 1
 end
 
 rbenv_sh = <<-EOS
@@ -29,7 +31,9 @@ end
 
 git "/tmp/ruby-build" do
   repository "git://github.com/sstephenson/ruby-build.git"
-  action :sync
+  user 'root'
+  group 'root'
+  depth 1
 end
 
 execute "./install.sh" do
