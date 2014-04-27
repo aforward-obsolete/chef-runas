@@ -21,3 +21,8 @@ service "nginx" do
   supports :status => true, :restart => true, :reload => true
   action [ :enable ]
 end
+
+file "/etc/nginx/sites-available/default" do
+  action :delete
+  notifies :run, "execute[nginx restart]"
+end
