@@ -24,5 +24,10 @@ end
 
 file "/etc/nginx/sites-available/default" do
   action :delete
-  notifies :run, "execute[nginx restart]"
+  notifies :run, "execute[service nginx restart]"
 end
+
+execute "service nginx restart" do
+  action :nothing
+end
+
