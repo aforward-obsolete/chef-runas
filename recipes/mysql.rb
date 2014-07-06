@@ -28,6 +28,6 @@ EOF
   not_if { File.exists?('/etc/chef/.mysql_secure_installation.complete')  }
 end
 
-["php5", "libapache2-mod-php5", "php5-mcrypt","php5-mysql"].each do |p|
+["php5", "php5-mcrypt","php5-mysql"].each do |p|
   package "#{p}"
 end
