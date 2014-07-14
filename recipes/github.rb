@@ -1,4 +1,5 @@
 
+package "git"
 
 execute "Enabled GIT by not verifying SSL" do
   command "echo \"export GIT_SSL_NO_VERIFY=1\" | cat - /root/.bashrc > /tmp/tmp.bashrc && mv /tmp/tmp.bashrc /root/.bashrc"
